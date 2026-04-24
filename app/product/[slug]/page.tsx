@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import Link from 'next/link';
 import { getProduct, getRelatedProducts } from '@/lib/get-product';
 import Container from '@/components/ui/Container';
 import ProductCard from '@/components/product/ProductCard';
