@@ -14,10 +14,11 @@ const WORLDS = [
     desc: 'The sweet taste of heritage and nostalgia.',
     image: 'https://images.unsplash.com/photo-1581798459219-318e76aecc7b?q=80&w=2000&auto=format&fit=crop',
     color: '#F5A623',
+    flagImage: 'https://images.unsplash.com/photo-1580131495204-51829e06a382?q=80&w=2000',
     products: [
-      'https://images.unsplash.com/photo-1582043242277-3f9f83659223?q=80&w=600',
-      'https://images.unsplash.com/photo-1582043242277-3f9f83659223?q=80&w=600',
-      'https://images.unsplash.com/photo-1582043242277-3f9f83659223?q=80&w=600',
+      'https://images.unsplash.com/photo-1621939514649-280e2eeea7f4?q=80&w=600',
+      'https://images.unsplash.com/photo-1581798459219-318e76aecc7b?q=80&w=600',
+      'https://images.unsplash.com/photo-1582050058244-4e1804c21e35?q=80&w=600',
     ]
   },
   {
@@ -27,10 +28,11 @@ const WORLDS = [
     desc: 'Neon lights and unapologetic sweetness.',
     image: 'https://images.unsplash.com/photo-1543157145-f78c636d023d?q=80&w=2000&auto=format&fit=crop',
     color: '#FF2E2E',
+    flagImage: 'https://images.unsplash.com/photo-1508344928928-7137b2f60295?q=80&w=2000',
     products: [
-      'https://images.unsplash.com/photo-1582043242277-3f9f83659223?q=80&w=600',
-      'https://images.unsplash.com/photo-1582043242277-3f9f83659223?q=80&w=600',
-      'https://images.unsplash.com/photo-1582043242277-3f9f83659223?q=80&w=600',
+      'https://images.unsplash.com/photo-1543157145-f78c636d023d?q=80&w=600',
+      'https://images.unsplash.com/photo-1512516704019-b145610214a1?q=80&w=600',
+      'https://images.unsplash.com/photo-1557142046-c704a3adf364?q=80&w=600',
     ]
   },
   {
@@ -40,10 +42,11 @@ const WORLDS = [
     desc: 'Artistry meets flavor in every bite.',
     image: 'https://images.unsplash.com/photo-1582305540412-f0da3691656c?q=80&w=2000&auto=format&fit=crop',
     color: '#FFB7C5',
+    flagImage: 'https://images.unsplash.com/photo-1520625902047-92e1069eb070?q=80&w=2000',
     products: [
-      'https://images.unsplash.com/photo-1582043242277-3f9f83659223?q=80&w=600',
-      'https://images.unsplash.com/photo-1582043242277-3f9f83659223?q=80&w=600',
-      'https://images.unsplash.com/photo-1582043242277-3f9f83659223?q=80&w=600',
+      'https://images.unsplash.com/photo-1599321955419-78536d36e0d3?q=80&w=600',
+      'https://images.unsplash.com/photo-1582305540412-f0da3691656c?q=80&w=600',
+      'https://images.unsplash.com/photo-1601000542385-e6f7df2b6b58?q=80&w=600',
     ]
   },
   {
@@ -53,10 +56,11 @@ const WORLDS = [
     desc: 'A curated journey across six continents.',
     image: 'https://images.unsplash.com/photo-1621939514649-280e2eeea7f4?q=80&w=2000&auto=format&fit=crop',
     color: '#C9A84C',
+    flagImage: 'https://images.unsplash.com/photo-1521295121783-8a321d551ad2?q=80&w=2000',
     products: [
-      'https://images.unsplash.com/photo-1582043242277-3f9f83659223?q=80&w=600',
-      'https://images.unsplash.com/photo-1582043242277-3f9f83659223?q=80&w=600',
-      'https://images.unsplash.com/photo-1582043242277-3f9f83659223?q=80&w=600',
+      'https://images.unsplash.com/photo-1534954413000-880572da9a19?q=80&w=600',
+      'https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=600',
+      'https://images.unsplash.com/photo-1541781257406-8d1e2e1ec926?q=80&w=600',
     ]
   }
 ];
@@ -129,7 +133,20 @@ export default function WorldsScroll() {
                 fill
                 className="object-cover grayscale-[40%] contrast-[1.2]"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-[var(--sr-void)] via-[var(--sr-void)]/60 to-transparent" />
+              
+              {/* Faded Flag Background */}
+              {world.flagImage && (
+                <div className="absolute right-0 top-0 w-[80vw] h-[100vh] opacity-[0.03] mix-blend-screen pointer-events-none z-0 scale-150 translate-x-1/4">
+                  <Image
+                    src={world.flagImage}
+                    alt={`${world.title} Flag`}
+                    fill
+                    className="object-cover grayscale"
+                  />
+                </div>
+              )}
+              
+              <div className="absolute inset-0 bg-gradient-to-r from-[var(--sr-void)] via-[var(--sr-void)]/80 to-transparent z-10" />
             </div>
 
             {/* Content */}

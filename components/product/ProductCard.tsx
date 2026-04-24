@@ -3,14 +3,13 @@
 import Link from 'next/link';
 import { ShoppingBag } from 'lucide-react';
 import { useCart } from '@/lib/shopify/cart-context';
-import { urlFor } from '@/lib/sanity.client';
 
 interface Product {
   id: string;
   name: string;
   brand: string;
   price: number;
-  image: string | any;
+  image: string;
   badge?: string;
 }
 
@@ -31,7 +30,7 @@ export default function ProductCard({ product }: { product: Product }) {
       {/* Image Layer */}
       <div className="aspect-[4/5] bg-[var(--sr-void)] overflow-hidden relative">
         <img
-          src={typeof product.image === 'string' ? product.image : urlFor(product.image).width(600).url()}
+          src={product.image}
           alt={product.name}
           className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 ease-out group-hover:scale-[1.06]"
         />

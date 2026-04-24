@@ -66,16 +66,15 @@ export default function Hero() {
         ref={videoRef} 
         className="absolute inset-0 opacity-0 transition-transform duration-1000 ease-out"
       >
-        {/* Ambient Base Layer */}
-        <div className="absolute inset-0 bg-[var(--sr-void)]" />
-        
-        {/* Cinematic Animated Color Orb (Riot Red & Gold) */}
-        <div 
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] max-w-[1200px] max-h-[1200px] rounded-full opacity-40 mix-blend-screen blur-[140px] animate-orb-drift pointer-events-none"
-          style={{
-            background: 'radial-gradient(circle, var(--sr-riot) 0%, rgba(201,168,76,0.5) 40%, transparent 70%)'
-          }}
-        />
+        {/* HD Cinematic Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1616423640778-28d1b53229bd?q=80&w=2000&auto=format&fit=crop"
+            alt="Luxury Confectionery"
+            className="w-full h-full object-cover grayscale-[30%] opacity-40 mix-blend-screen"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[var(--sr-void)]/80 via-transparent to-[var(--sr-void)]" />
+        </div>
 
         <div className="absolute inset-0 noise-overlay" />
         <div className="vignette" />
