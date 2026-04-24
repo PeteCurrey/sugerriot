@@ -115,7 +115,7 @@ export default function WorldTemplate({
           key={i}
           title={block.title}
           content={block.content}
-          imageAlt={`${slug} editorial ${i + 1}`}
+          image="https://images.unsplash.com/photo-1543157145-f78c636d023d?q=80&w=1000"
           reverse={i % 2 === 1}
         />
       ))}
