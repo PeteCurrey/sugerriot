@@ -1,9 +1,6 @@
 @import "tailwindcss";
 
 @layer base {
-@import "tailwindcss";
-
-@layer base {
   :root {
     /* BRAND COLORS — CINEMATIC SPEC */
     --sr-void:        #080808;     /* Near-black site base */
