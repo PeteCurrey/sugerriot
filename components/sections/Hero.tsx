@@ -66,8 +66,17 @@ export default function Hero() {
         ref={videoRef} 
         className="absolute inset-0 opacity-0 transition-transform duration-1000 ease-out"
       >
-        {/* Particle Fallback / Ambient Layer */}
-        <div className="absolute inset-0 bg-[#1A0A0A] bg-gradient-to-b from-transparent to-[var(--sr-void)]" />
+        {/* Ambient Base Layer */}
+        <div className="absolute inset-0 bg-[var(--sr-void)]" />
+        
+        {/* Cinematic Animated Color Orb (Riot Red & Gold) */}
+        <div 
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] max-w-[1200px] max-h-[1200px] rounded-full opacity-40 mix-blend-screen blur-[140px] animate-orb-drift pointer-events-none"
+          style={{
+            background: 'radial-gradient(circle, var(--sr-riot) 0%, rgba(201,168,76,0.5) 40%, transparent 70%)'
+          }}
+        />
+
         <div className="absolute inset-0 noise-overlay" />
         <div className="vignette" />
         
@@ -160,6 +169,17 @@ export default function Hero() {
 
         .animate-scroll-line {
           animation: scroll-line 2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+        }
+
+        @keyframes orb-drift {
+          0% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+          33% { transform: translate(-45%, -55%) scale(1.1) rotate(10deg); }
+          66% { transform: translate(-55%, -45%) scale(0.9) rotate(-5deg); }
+          100% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+        }
+
+        .animate-orb-drift {
+          animation: orb-drift 15s ease-in-out infinite;
         }
       `}</style>
     </section>
